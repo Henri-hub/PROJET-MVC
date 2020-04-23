@@ -1,0 +1,16 @@
+<section class="section">
+    <div class="container">
+
+        <h1 class="title">{{henri.title}}</h1>
+        <img src="{{henri.image}}" alt="">
+        <p>{{{henri.content}}}</p>
+        <p>Publié par {{henri.author}}, le {{moment createDate format="DD-MM-YY"}}</p>
+        {{#if user}}
+        <button class="button is-success"><a href="/article/edit/{{henri._id}}">Modifier</a></button>
+        <form action="/articles/{{henri._id}}/?_method=DELETE" method="post">
+            <button class="button is-danger">Supprimer</button>
+        </form>
+        {{/if}}
+
+    </div>
+</section>
